@@ -10,6 +10,9 @@ onMounted(() => {
   on('custom_method_invoked', payload => {
     console.log('custom_method_invoked', payload)
   })
+  on('*', event => {
+    console.log(event)
+  })
 })
 </script>
 

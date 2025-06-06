@@ -1,5 +1,16 @@
 <script setup lang="ts">
+import { onMounted } from 'vue'
 import HelloWorld from './components/HelloWorld.vue'
+import { on, init } from '@telegram-apps/sdk-vue'
+
+
+onMounted(() => {
+  console.log('onMounted')
+  init()
+  on('custom_method_invoked', payload => {
+    console.log('custom_method_invoked', payload)
+  })
+})
 </script>
 
 <template>
